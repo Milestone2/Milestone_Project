@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingHeart"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:backgroundTint="@color/ThemeColor"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/heart" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingLung"
+        android:layout_width="150dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="200dp"
+        app:backgroundTint="@color/ThemeColor"
+        android:layout_height="150dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/lungs" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingTemp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="360dp"
+        app:backgroundTint="@color/ThemeColor"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/temperature" />
+
+</android.support.design.widget.CoordinatorLayout>
