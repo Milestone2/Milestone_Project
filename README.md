@@ -1,4 +1,3 @@
-
 # Final Project - *Medi-Care*
 
 ** Medi-Care ** is a Remote Medical Assistant android app that allows method of transferring data from a mobile health system In a cloud-mobile environment.
@@ -38,7 +37,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/Milestone2/Remote-medical-assistant/blob/master/image.png' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src=' ' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
