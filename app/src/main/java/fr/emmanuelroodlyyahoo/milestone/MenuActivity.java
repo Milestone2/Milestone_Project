@@ -14,12 +14,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import fr.emmanuelroodlyyahoo.milestone.Fragments.LocalisationFragment;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.StatusFragment;
 
-public class MenuActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import static fr.emmanuelroodlyyahoo.milestone.R.id.fab;
+
+public class MenuActivity extends AppCompatActivity   implements NavigationView.OnNavigationItemSelectedListener {
+
+    FrameLayout fragmentContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public class MenuActivity extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        fragmentContainer = (FrameLayout) findViewById(R.id.fragmentContainer);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,9 +42,8 @@ public class MenuActivity extends AppCompatActivity
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -116,12 +119,12 @@ public class MenuActivity extends AppCompatActivity
 
         // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.FragmentContainer, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
 
         // Highlight the selected item has been done by NavigationView
         item.setChecked(true);
         // Set action bar title
-        setTitle(item.getTitle());
+        //setTitle(item.getTitle());
         // Close the navigation drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
