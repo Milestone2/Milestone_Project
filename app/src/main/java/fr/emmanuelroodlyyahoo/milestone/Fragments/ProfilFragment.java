@@ -1,10 +1,55 @@
 package fr.emmanuelroodlyyahoo.milestone.Fragments;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.emmanuelroodlyyahoo.milestone.R;
 
 /**
  * Created by Emmanuel Roodly on 17/08/2017.
  */
 
 public class ProfilFragment extends Fragment {
+
+    Spinner spTemp;
+    List<String> temp;
+    ArrayAdapter<String> adapterTemp;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View racine_profil = inflater.inflate(R.layout.profil_ui, null);
+        spTemp = (Spinner) racine_profil.findViewById(R.id.spTemperature);
+        temp = new ArrayList<>();
+        temp.add("˚C");
+        temp.add("˚F");
+        adapterTemp = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, temp);
+        adapterTemp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spTemp.setAdapter(adapterTemp);
+        spTemp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), spTemp.getSelectedItem().toString() , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        return racine_profil;
+    }
+
 }

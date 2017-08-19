@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import fr.emmanuelroodlyyahoo.milestone.Fragments.ContactFragment2;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.LocalisationFragment;
+import fr.emmanuelroodlyyahoo.milestone.Fragments.ProfilFragment;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.StatusFragment;
 
 import static fr.emmanuelroodlyyahoo.milestone.R.id.fab;
@@ -49,6 +52,14 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(savedInstanceState == null){
+            StatusFragment statusFragment = StatusFragment.newInstance();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragmentContainer, statusFragment);
+            ft.commit();
+        }
+
     }
 
     @Override
@@ -93,22 +104,25 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
 
         switch(item.getItemId()) {
             case R.id.nav_Home:
-                fragmentClass = StatusFragment.class;;
+                fragmentClass = StatusFragment.class;
                 break;
             case R.id.nav_Status:
                 fragmentClass = StatusFragment.class;
                 break;
             case R.id.nav_Profil:
-                fragmentClass = StatusFragment.class;;
+                fragmentClass = ProfilFragment.class;
+                break;
+            case R.id.nav_contact:
+                fragmentClass = ContactFragment2.class;
                 break;
             case R.id.nav_localisation:
                 fragmentClass = LocalisationFragment.class;
                 break;
             case R.id.nav_manage:
-                fragmentClass = StatusFragment.class;;
+                fragmentClass = StatusFragment.class;
                 break;
             default:
-                fragmentClass = StatusFragment.class;;
+                fragmentClass = StatusFragment.class;
         }
 
         try {
