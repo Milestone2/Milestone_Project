@@ -32,8 +32,9 @@ public class ContactAdapter2 extends ArrayAdapter<Contact> {
 
     public static class ViewHolder{
         TextView tvIemNom;
-        TextView tvtelNumber;
         TextView tvEmail;
+        TextView tvTelNumber;
+        TextView tvTelNumber2;
     }
 
 
@@ -46,11 +47,12 @@ public class ContactAdapter2 extends ArrayAdapter<Contact> {
         if(convertView == null){
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.item_contact2, parent, false);
-
             viewHolder = new ViewHolder();
             viewHolder.tvIemNom = (TextView) convertView.findViewById(R.id.tvitemNom);
-            viewHolder.tvtelNumber = (TextView) convertView.findViewById(R.id.tvtelNumber);
+
             viewHolder.tvEmail = (TextView) convertView.findViewById(R.id.tvEmail);
+            viewHolder.tvTelNumber = (TextView) convertView.findViewById(R.id.tvtelNumber);
+            viewHolder.tvTelNumber2 = (TextView) convertView.findViewById(R.id.tvtelNumber2);
             convertView.setTag(viewHolder);
 
         }else{
@@ -59,9 +61,11 @@ public class ContactAdapter2 extends ArrayAdapter<Contact> {
 
         ImageView ivImgProfil = (ImageView) convertView.findViewById(R.id.ivImgProfil);
 
-        //viewHolder.tvIemNom.setText(aContact.getNom().toString() + " " + aContact.getPrenom().toString());
-        //viewHolder.tvtelNumber.setText(String.valueOf(aContact.getTel()));
-        //viewHolder.tvEmail.setText(aContact.getEmail().toString());
+        //Mise en place des information dans les objets view
+        viewHolder.tvIemNom.setText(aContact.getNom().toString() + " " + aContact.getPrenom().toString());
+        viewHolder.tvTelNumber.setText(String.valueOf(aContact.getTel()));
+        viewHolder.tvEmail.setText(aContact.getEmail().toString());
+        viewHolder.tvTelNumber2.setText(String.valueOf(aContact.getTel2()));
 
         return convertView;
     }

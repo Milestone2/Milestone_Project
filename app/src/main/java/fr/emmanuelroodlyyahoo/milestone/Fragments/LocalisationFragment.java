@@ -66,7 +66,7 @@ public class LocalisationFragment extends Fragment implements OnMapReadyCallback
         tvLongitude = (TextView) racine.findViewById(R.id.tvLongitude);
         tvLatitude = (TextView) racine.findViewById(R.id.tvLatitude);
 
-        FragmentManager fragmentManager = getFragmentManager();
+        //FragmentManager fragmentManager = getFragmentManager();
 
        //mapFragment = (MapFragment) getTargetFragment().findFragmentById(R.id.map);
         //mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);

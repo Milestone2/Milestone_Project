@@ -3,6 +3,7 @@ package fr.emmanuelroodlyyahoo.milestone.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ public class AddContact extends DialogFragment {
     EditText etNumber2;
     Button btSave;
     Button btCancel;
+    ContactFragment2 contactFragment2;
 
 
     @Nullable
@@ -41,6 +43,20 @@ public class AddContact extends DialogFragment {
         etNumber2 = (EditText) racine_addC.findViewById(R.id.etNumber2);
         btSave = (Button) racine_addC.findViewById(R.id.btSaveContact);
         btCancel = (Button) racine_addC.findViewById(R.id.btCancel);
+        btSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SendContactInfo();//Donnees envoyees a la liste des contacts
+                etName.getText().clear();
+                etPrenom.getText().clear();
+                etEmail.getText().clear();
+                etNumber1.getText().clear();
+                etNumber2.getText().clear();
+                dismiss();
+
+            }
+        });
 
         btCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,5 +66,29 @@ public class AddContact extends DialogFragment {
         });
 
         return  racine_addC;
+    }
+
+    @Override
+    public void onAttachFragment(Fragment childFragment) {
+        super.onAttachFragment(childFragment);
+
+    }
+
+
+    //Definition de l'interface permettant d'envoyer les informations du contact pour les enregistrer
+    public interface ContactListener{
+        void onFinishEditContact(String nom, String prenom, String email, int number1, int number2);
+    }
+
+    //methode utilisant l'interface pour faire passer les donnees
+    public void SendContactInfo(){
+        ContactListener listener = (ContactListener) getTargetFragment();
+        listener.onFinishEditContact(etName.getText().toString(),
+                etPrenom.getText().toString(),
+                etEmail.getText().toString(),
+                Integer.parseInt(etNumber1.getText().toString()),
+                Integer.parseInt(etNumber2.getText().toString())
+        );
+
     }
 }
