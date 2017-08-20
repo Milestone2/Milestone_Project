@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
@@ -26,14 +28,14 @@
         android:layout_marginStart="18dp"
         android:layout_toEndOf="@+id/ivImgProfil"
         android:layout_toRightOf="@+id/ivImgProfil"
-        android:text="Noel Emmanuel Roodly"
+        tools:text="Noel Emmanuel Roodly"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvtelNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="50937396810"
+        tools:text="50937396810"
         android:layout_below="@+id/ivImgProfil"
         android:layout_alignLeft="@+id/tvEmail"
         android:layout_alignStart="@+id/tvEmail" />
@@ -57,14 +59,14 @@
         android:layout_alignLeft="@+id/tvitemNom"
         android:layout_alignStart="@+id/tvitemNom"
         android:layout_below="@+id/tvitemNom"
-        android:text="emmanuelroodly@yahoo.fr"
+        tools:text="emmanuelroodly@yahoo.fr"
         android:textColor="@android:color/holo_blue_light" />
 
     <TextView
         android:id="@+id/tvtelNumber2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="50933271774"
+        tools:text="50933271774"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_toRightOf="@+id/textView6"

@@ -23,14 +23,14 @@ import fr.emmanuelroodlyyahoo.milestone.R;
 public class ProfilFragment extends Fragment {
 
     Spinner spTemp;
-    List<String> temp;
-    ArrayAdapter<String> adapterTemp;
+    List<String> temp;//Liste d'element a mettre au spinner
+    ArrayAdapter<String> adapterTemp;//Adpater liant la liste d'element au Spinner
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View racine_profil = inflater.inflate(R.layout.profil_ui, null);
-        spTemp = (Spinner) racine_profil.findViewById(R.id.spTemperature);
+        spTemp = (Spinner) racine_profil.findViewById(R.id.spTemperature); //Spinner qui doit afficher C | F
         temp = new ArrayList<>();
         temp.add("˚C");
         temp.add("˚F");

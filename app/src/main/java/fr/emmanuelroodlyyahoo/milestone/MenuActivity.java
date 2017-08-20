@@ -22,12 +22,15 @@ import fr.emmanuelroodlyyahoo.milestone.Fragments.ContactFragment2;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.LocalisationFragment;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.ProfilFragment;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.StatusFragment;
+import fr.emmanuelroodlyyahoo.milestone.bluetooth.DeviceScanActivity;
 
 import static fr.emmanuelroodlyyahoo.milestone.R.id.fab;
 
 public class MenuActivity extends AppCompatActivity   implements NavigationView.OnNavigationItemSelectedListener {
 
     FrameLayout fragmentContainer;
+
+    public FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         fragmentContainer = (FrameLayout) findViewById(R.id.fragmentContainer);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,9 +93,10 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(MenuActivity.this, DeviceScanActivity.class);
+            startActivity(i);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -119,9 +123,6 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
                 break;
             case R.id.nav_localisation:
                 fragmentClass = LocalisationFragment.class;
-                break;
-            case R.id.nav_manage:
-                fragmentClass = StatusFragment.class;
                 break;
             default:
                 fragmentClass = StatusFragment.class;
