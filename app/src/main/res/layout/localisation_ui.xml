@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Jean Samuel"
+            android:text="Josue Noel"
             android:textColor="@android:color/background_light"
             android:textSize="20sp" />
 
@@ -57,6 +57,10 @@
             android:layout_alignBottom="@+id/textView4"
             android:layout_toRightOf="@+id/textView4"
             android:layout_toEndOf="@+id/textView4"
+            android:shadowRadius="3"
+            android:shadowColor="@android:color/white"
+            android:shadowDx="2"
+            android:shadowDy="2"
             android:layout_marginLeft="15dp"
             android:layout_marginStart="15dp" />
 
@@ -65,6 +69,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="TextView"
+            android:shadowRadius="6"
+            android:shadowColor="@android:color/white"
+            android:shadowDx="3"
+            android:shadowDy="3"
             android:textColor="@color/colorAccent"
             android:layout_alignBottom="@+id/textView3"
             android:layout_toRightOf="@+id/textView4"
@@ -72,9 +80,9 @@
 
     </RelativeLayout>
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.google.android.gms.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
         android:name="com.google.android.gms.maps.MapFragment"
-        android:id="@+id/map"
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/linearLayout"
@@ -92,6 +100,7 @@
         map:uiTiltGestures="true"
         map:uiZoomControls="false"
         map:uiZoomGestures="true"/>
+
 
 
 </RelativeLayout>

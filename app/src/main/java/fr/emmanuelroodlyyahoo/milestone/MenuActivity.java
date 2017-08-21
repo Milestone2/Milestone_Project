@@ -18,6 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import fr.emmanuelroodlyyahoo.milestone.Fragments.ContactFragment2;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.LocalisationFragment;
 import fr.emmanuelroodlyyahoo.milestone.Fragments.ProfilFragment;
@@ -29,7 +31,7 @@ import static fr.emmanuelroodlyyahoo.milestone.R.id.fab;
 public class MenuActivity extends AppCompatActivity   implements NavigationView.OnNavigationItemSelectedListener {
 
     FrameLayout fragmentContainer;
-
+    public GoogleMap maps;
     public FloatingActionButton fab;
 
     @Override
