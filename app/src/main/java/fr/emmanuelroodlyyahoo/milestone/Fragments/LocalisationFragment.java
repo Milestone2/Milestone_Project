@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,15 +36,19 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.vision.text.Text;
+
 import android.support.v4.app.FragmentManager;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import fr.emmanuelroodlyyahoo.milestone.MenuActivity;
 import fr.emmanuelroodlyyahoo.milestone.R;
 
+import static android.os.Build.VERSION_CODES.O;
 import static fr.emmanuelroodlyyahoo.milestone.R.id.map;
+import static fr.emmanuelroodlyyahoo.milestone.R.id.mapView;
 
 /**
  * Created by Emmanuel Roodly on 17/08/2017.
@@ -54,8 +59,8 @@ public class LocalisationFragment extends Fragment implements OnMapReadyCallback
     private Location currentBestLocation = null;
     TextView tvLongitude;
     TextView tvLatitude;
-    GoogleMap mMap;
-    MapFragment mapFragment;
+    GoogleMap map;
+    MapView mapView;
     SupportMapFragment supportMapFragment;
 
 
@@ -65,14 +70,18 @@ public class LocalisationFragment extends Fragment implements OnMapReadyCallback
         View racine = inflater.inflate(R.layout.localisation_ui, container, false);
         tvLongitude = (TextView) racine.findViewById(R.id.tvLongitude);
         tvLatitude = (TextView) racine.findViewById(R.id.tvLatitude);
+        mapView = (MapView) racine.findViewById(R.id.mapView);
 
-        //FragmentManager fragmentManager = getFragmentManager();
+        tvLongitude.setText(String.valueOf(151));
+        tvLatitude.setText(String.valueOf(-34));
 
-       //mapFragment = (MapFragment) getTargetFragment().findFragmentById(R.id.map);
-        //mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-        //mMap = ((MapFragment) fragmentManager.findFragmentById(R.id.map)).getMapAsync();
 
-        //mapFragment.getMapAsync(this);
+        mapView.onCreate(savedInstanceState);
+        mapView.onResume();
+
+        //Initialisation de la carte
+        mapView.getMapAsync(this);
+        MapsInitializer.initialize(this.getContext());
 
 
 
@@ -82,13 +91,32 @@ public class LocalisationFragment extends Fragment implements OnMapReadyCallback
 
 
     @Override
-    public void onMapReady(final GoogleMap googleMap) {
-        mMap = googleMap;
+    public void onMapReady(GoogleMap googleMap) {
 
-        // Add a marker in Sydney and move the camera
+        this.map = googleMap;
+        this.map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        this.map.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        this.map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+
+    @Override
+    public void onResume() {
+        mapView.onResume();
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        mapView.onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
     }
 
 
