@@ -33,13 +33,15 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
     FrameLayout fragmentContainer;
     public GoogleMap maps;
     public FloatingActionButton fab;
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Home");
         fragmentContainer = (FrameLayout) findViewById(R.id.fragmentContainer);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -113,18 +115,27 @@ public class MenuActivity extends AppCompatActivity   implements NavigationView.
         switch(item.getItemId()) {
             case R.id.nav_Home:
                 fragmentClass = StatusFragment.class;
+                toolbar.setTitle("Home");
                 break;
             case R.id.nav_Status:
                 fragmentClass = StatusFragment.class;
+                toolbar.setTitle("History");
                 break;
             case R.id.nav_Profil:
                 fragmentClass = ProfilFragment.class;
+                toolbar.setTitle("Profil");
                 break;
             case R.id.nav_contact:
                 fragmentClass = ContactFragment2.class;
+                toolbar.setTitle("Contacts");
                 break;
             case R.id.nav_localisation:
                 fragmentClass = LocalisationFragment.class;
+                toolbar.setTitle("Localisation");
+                break;
+            case R.id.nav_manage:
+                fragmentClass = StatusFragment.class;
+                toolbar.setTitle("Settings");
                 break;
             default:
                 fragmentClass = StatusFragment.class;
