@@ -115,13 +115,14 @@
             android:textColor="@color/newcolor"
             android:textSize="20sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
-            android:text="Poids: 6.5Kg"
+            android:text="Medecin affilie:  Midouin Turnier"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
         <TextView
@@ -151,11 +152,11 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:textColor="@android:color/black"
                 android:layout_marginLeft="10dp"
-                android:textSize="15sp"
-                android:text="Temperature: " />
+                android:layout_marginRight="30dp"
+                android:text="Temperature moyenne : "
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tvTempReceiver"
