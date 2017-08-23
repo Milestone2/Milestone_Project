@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Owner\AndroidStudioProjects\ble\Remote-medical-assistant\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\myproject\Milestone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.3"
-        sha1="384eaea0a30c72db5d945fa930bcb4382b88f940">
-        <dex dex="C:\Users\Owner\AndroidStudioProjects\ble\Remote-medical-assistant\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_043ce29a9db152b1de9d048f94e0e8f4a91ef063\classes.dex" />
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\myproject\Milestone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_72e49501ed7de48fabd1caf4073a5657715a7f6b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Owner\AndroidStudioProjects\ble\Remote-medical-assistant\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\myproject\Milestone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.3"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\Owner\AndroidStudioProjects\ble\Remote-medical-assistant\Application\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_2119e85d63b16cdb92d8a849236249ab74adec7a\classes.dex" />
+        revision="26.0.0"
+        sha1="98f11aaf83bf564348a55369c63c878564a0f76e">
+        <dex dex="C:\myproject\Milestone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d75c6bdba87070fb0705aa7d830389d766d1e42b\classes.dex" />
     </item>
 
 </items>
