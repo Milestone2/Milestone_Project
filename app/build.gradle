@@ -34,5 +34,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.android.gms:play-services:9.6.0'
     compile 'com.google.android.gms:play-services-maps:9.6.0'
+    compile 'com.backendless:backendless:4.0.+'
     testCompile 'junit:junit:4.12'
 }
